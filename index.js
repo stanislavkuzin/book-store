@@ -9,6 +9,7 @@ const { connection } = require('./mongo/mongo.js');
 const { addBook, getAllBooks, getBook, deleteBook } = require('./mongo/books.js');
 const { addComment, getAllComments, getComment, deleteComment } = require('./mongo/comments.js');
 const { addReting, getAllRetings, getReting, deleteReting } = require('./mongo/retings.js');
+const PORT = 3000;
 
 bot.launch();
 
@@ -47,7 +48,7 @@ function loadingEffect() {
         process.stdout.cursorTo(0);
         process.stdout.write('Server is running on port 3000\n');
     }, 3000);
-    app.listen(3000, () => {
+    app.listen(PORT, '0.0.0.0', () => {
 
     });
     connection();
